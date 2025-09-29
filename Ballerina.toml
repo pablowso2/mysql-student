@@ -1,0 +1,8 @@
+[package]
+org = "pablosa"
+name = "mysql_student"
+version = "0.1.0"
+title = "mysql-student"
+
+[build-options]
+sticky = true
