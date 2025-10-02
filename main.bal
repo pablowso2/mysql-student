@@ -28,7 +28,17 @@ service /student on httpDefaultListener {
     function init() returns error? {
         // Initiate the mysql client at the start of the service. This will be used
         // throughout the lifetime of the service.
-        self.db = check new ("bijira-mysql-4081075185.dp-development-pablosa-7278-2606825535.svc.cluster.local", "root", "pass", "school_db", 8080);
+        
+        //Cloud config
+        //string dbIP="bijira-mysql-4081075185.dp-development-pablosa-7278-2606825535.svc.cluster.local"
+        //int dbPort = 8080;
+        
+        //Onpremise config
+        string dbIP="100.110.11.106"; 
+        int dbPort = 3306;
+
+
+        self.db = check new (dbIP, "root", "pass", "school_db", dbPort);
     }
 
     resource function get students() returns Student[]|error {
