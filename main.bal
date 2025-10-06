@@ -30,7 +30,7 @@ service /student on httpDefaultListener {
         // throughout the lifetime of the service.
         
         //Cloud config
-        string dbIP="bijira-mysql-4081075185.dp-development-pablosa-7278-2606825535.svc.cluster.local"
+        string dbIP="bijira-mysql-4081075185.dp-development-pablosa-7278-2606825535.svc.cluster.local";
         int dbPort = 8080;
         
         //Onpremise config
